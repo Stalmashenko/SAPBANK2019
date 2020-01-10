@@ -1,0 +1,104 @@
+﻿<Window x:Class="SAP_bank.workplace"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SAP_bank"
+        xmlns:users="clr-namespace:SAP_bank.userControls"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="workplace" Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White" FontFamily="Century Gothic" >
+    <Window.Resources>
+        <Storyboard x:Key="MenuOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="60"></EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"></EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="MenuClose">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"></EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="60"></EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuOpen}"></BeginStoryboard>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCloseMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuClose}"></BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    
+    <Grid Background="#f1fcfb">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Height="70" Background="#6795A0" VerticalAlignment="Top" >
+            <TextBlock  Name="HeaderWork" Text="SAPbank" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"></TextBlock>
+           
+            <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="lala" VerticalAlignment="Center" FontSize="18"></TextBlock>
+                <materialDesign:PopupBox  Margin="10" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+                    <StackPanel Width="160">
+                        <Button FontSize="14" Content="Мой профиль" Click="MyProfileButton_Click"></Button>
+                        <Button Name="MyProfileButton_ChangePassword" FontSize="14" Content="Изменить пароль" Click="MyProfileButton_ChangePassword_Click"></Button>
+                        <Separator/>
+                        <Button FontSize="14" x:Name="ButtonPopUpLogout" Content="Выход" Click="ButtonPopUpLogout_Click"></Button>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#375A63">
+            
+            <StackPanel>
+                <Grid Height="150" Background="white">
+                    <Button x:Name="ButtonCloseMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}"  VerticalAlignment="top" HorizontalAlignment="Right" Visibility="Collapsed" Click="ButtonCloseMenu_Click">
+                        <materialDesign:PackIcon Foreground="#186059" Kind="ArrowLeft" Width="25" Height="25"/>
+                    </Button>
+                    <Button x:Name="ButtonOpenMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}"  VerticalAlignment="top" HorizontalAlignment="Right" Click="ButtonOpenMenu_Click">
+                        <materialDesign:PackIcon Foreground="#186059" Kind="Menu" Width="25" Height="25"/>
+                    </Button>
+                </Grid>
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Person" Width="25" Height="25" Margin="15" VerticalAlignment="Center"></materialDesign:PackIcon>
+                    <Button x:Name="MyProfileButton" Click="MyProfileButton_Click" Foreground="white" Content="Мой профиль         "  FontFamily="Century Gothic" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MaterialDesignRaisedAccentButton}" materialDesign:RippleAssist.Feedback="#6795A0"></Button>
+                </StackPanel>                    
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Cash" Width="25" Height="25"  Margin="15" VerticalAlignment="Center"></materialDesign:PackIcon>
+                    <Button x:Name="MyBalanceButton" Click="MyBalanceButton_Click" Content="Мой баланс              " FontFamily="Century Gothic" Foreground="white" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MaterialDesignRaisedAccentButton}" materialDesign:RippleAssist.Feedback="#6795A0"></Button>
+                </StackPanel>                   
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="History" Width="25" Height="25" Margin="15"  VerticalAlignment="Center"></materialDesign:PackIcon>
+                    <Button x:Name="MyHistoryButton" Click="MyHistoryButton_Click" Content="Моя история           " Foreground="white"  FontFamily="Century Gothic" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MaterialDesignRaisedAccentButton}" materialDesign:RippleAssist.Feedback="#6795A0"></Button>
+                </StackPanel>                    
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Transfer" Width="25" Height="25"  Margin="15"  VerticalAlignment="Center"></materialDesign:PackIcon>
+                    <Button x:Name="TransferButton" Click="TransferButton_Click"  Content="Перевод средств" Foreground="white"  FontFamily="Century Gothic" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MaterialDesignRaisedAccentButton}" materialDesign:RippleAssist.Feedback="#6795A0"></Button>
+                </StackPanel>                    
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Bank" Width="25" Height="25"  Margin="15"  VerticalAlignment="Center"></materialDesign:PackIcon>
+                    <Button  x:Name="DepositButton" Click="DepositButton_Click" Content="Депозит                " Foreground="white"  FontFamily="Century Gothic" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MaterialDesignRaisedAccentButton}" materialDesign:RippleAssist.Feedback="#6795A0"></Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="SquareIncCash" Width="22" Height="22"  Margin="15"  VerticalAlignment="Center"></materialDesign:PackIcon>
+                    <Button x:Name="ConverterButton" Click="ConverterButton_Click" Content="Конвертер валют       " Foreground="white"  FontFamily="Century Gothic"  Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MaterialDesignRaisedAccentButton}" materialDesign:RippleAssist.Feedback="#6795A0"></Button>
+                 </StackPanel>
+            </StackPanel>
+        </Grid>
+        <users:Converter x:Name="ucConverter" Grid.Row="1" Grid.Column="1" Visibility="Hidden"></users:Converter>
+        <users:Deposit x:Name="ucDeposit" Grid.Row="1" Grid.Column="1" Visibility="Hidden"></users:Deposit>
+        <users:MyBalance x:Name="ucMyBalance"  Grid.Row="1" Grid.Column="1" Visibility="Hidden"></users:MyBalance>
+        <users:MyHistory x:Name="ucMyHistory" Grid.Row="1" Grid.Column="1" Visibility="Hidden"></users:MyHistory>
+        <users:MyProfile x:Name="ucMyProfile" Grid.Row="1" Grid.Column="1" Visibility="Hidden"></users:MyProfile>
+        <users:Transfer x:Name="ucTransfer" Grid.Row="1" Grid.Column="1" Visibility="Hidden"></users:Transfer>
+        <users:ChangePassword x:Name="ucChangePassword"  Grid.Row="1" Grid.Column="1" Visibility="Hidden"></users:ChangePassword>
+    </Grid>
+</Window>

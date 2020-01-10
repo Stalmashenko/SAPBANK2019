@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="SAP_bank.userControls.Deposit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SAP_bank.userControls"
+             mc:Ignorable="d" 
+             FontFamily="Century Gothic"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#f1fcfb">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+
+        </Grid.ColumnDefinitions>
+        <!--<TextBlock Text="ОФОРМИТЬ" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="33" Foreground="#336d86" FontWeight="UltraBold" FontStyle="Italic" Grid.Row="1" Grid.Column="1"/>
+        <TextBlock Text="МОЙ ДЕПОЗИТ" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="33" FontStyle="Italic" Foreground="#336d86" FontWeight="UltraBold" Grid.Row="1" Grid.Column="3"/>
+
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Margin="0,30">
+            <TextBox Name="MyProfileSurname" materialDesign:HintAssist.Hint="ФАМИЛИЯ" FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+            <TextBox Name="MyProfileFirstname" materialDesign:HintAssist.Hint="ИМЯ" FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+            <TextBox Name="MyProfileFathersname" materialDesign:HintAssist.Hint="ОТЧЕСТВО" FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+            <TextBox Name="MyProfileIDPassport" materialDesign:HintAssist.Hint="ИДЕНТИФИЦИРОВАННЫЙ НОМЕР ПАСПОРТА" FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+            <TextBox Name="MyProfileBDAY" materialDesign:HintAssist.Hint="ДЕНЬ РОЖДЕНИЯ" FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+            <TextBox Name="MyProfileGender" materialDesign:HintAssist.Hint="ПОЛ" FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+            <TextBox Name="MyProfilePhone" materialDesign:HintAssist.Hint="МОБИЛЬНЫЙ ТЕЛЕФОН" FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="3" Grid.Row="2" Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Margin="0,30">
+            <TextBox  Name="MyProfileState" materialDesign:HintAssist.Hint="СТРАНА" FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+            <TextBox  Name="MyProfileCity" materialDesign:HintAssist.Hint="ГОРОД" FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+            <TextBox  Name="MyProfileStreet" materialDesign:HintAssist.Hint="УЛИЦА" FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+            <TextBox  Name="MyProfileHouse" materialDesign:HintAssist.Hint="ДОМ" FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+            <TextBox  Name="MyProfileHousing" materialDesign:HintAssist.Hint="КОРПУС" FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+            <TextBox  Name="MyProfileFlat" materialDesign:HintAssist.Hint="КВАРТИРА" FontSize="16" Style="{StaticResource MaterialDesignFloatingHintTextBox}" IsReadOnly="True" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Right" Orientation="Horizontal" TextBlock.Foreground="{DynamicResource MaterialDesignBody}">            
+            <Button Name="MyProfileButton_Change" Background="#336d86" Foreground="White" BorderBrush="#707870" VerticalAlignment="Bottom"  Content="ПОПОЛНИТЬ"   Width="195" Height="30" Click="MyProfileButton_Change_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Right" Orientation="Horizontal" TextBlock.Foreground="{DynamicResource MaterialDesignBody}">
+            <Button Name="DepositButton_Create" Background="#336d86" Foreground="White" BorderBrush="#707870" VerticalAlignment="Bottom"  Content="ОФОРМИТЬ"   Width="195" Height="30" Click="MyProfileButton_Change_Click"/>
+        </StackPanel>-->
+    </Grid>
+</UserControl>
